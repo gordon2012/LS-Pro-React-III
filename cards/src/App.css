@@ -1,7 +1,31 @@
-.App-header {
-  text-align: center;
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.App {
+  background: whitesmoke;
+}
+
+.Body-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  background: #ccc;
+}
+
+.Card {
+  background: white;
+  flex: 0 0 33.333%;
+  display: flex;
+}
+.Card:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.Card-inner {
+  flex: 1;
+  background-size: cover;
+}
+@media(min-width: 200px) {
+  .Card-inner {
+    margin: 8px;
+  }
 }
