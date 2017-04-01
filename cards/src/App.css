@@ -1,12 +1,37 @@
 .App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.Header {
+  flex-basis: 32px;
   background: whitesmoke;
+  border-bottom: 1px solid lightgray;
+}
+.Header svg {
+  width: 64px;
+  height: 64px;
+}
+
+.Footer {
+  border-top: 1px solid lightgray;
+  background: whitesmoke;
+  text-align: center;
+  padding: 8px;
+}
+
+.Body {
+  flex: 1;
+}
+.Body h1 {
+  text-align: center;
+  padding: 16px;
 }
 
 .Body-container {
   display: flex;
   flex-wrap: wrap;
-
-  background: #ccc;
 }
 
 .Card {

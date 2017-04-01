@@ -20,7 +20,7 @@ export default class Body extends Component {
     render() {
         return (
             <div className="Body">
-                <h2>{ this.state.user }</h2>
+                <h1>{ this.state.user }</h1>
                 <div className="Body-container">
                     { this.state.posts.map((post,i) => <Card key={i} data={post} />) }
                 </div>
