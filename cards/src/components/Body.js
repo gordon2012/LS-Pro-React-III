@@ -19,10 +19,19 @@ export default class Body extends Component {
 
     render() {
         return (
-            <div className="Body">
-                <h1>{ this.state.user }</h1>
-                <div className="Body-container">
-                    { this.state.posts.map((post,i) => <Card key={i} data={post} />) }
+            <div className="Body wrap">
+                <div className="Body inner">
+
+                    <div className="hero">
+                        <div className="hero-body">
+                            <p className="title">{ this.state.user }</p>
+                            <p><strong>Simon</strong> is an italian greyhound, fanatical adventurer, and avid wrestler.</p>
+                        </div>
+                    </div>
+
+                    <div className="Body-container">
+                        { this.state.posts.map((post,i) => <Card key={i} data={post} />) }
+                    </div>
                 </div>
             </div>
         );
