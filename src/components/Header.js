@@ -11,7 +11,7 @@ export default () => (
                     </svg>
                 </div>
                 <div className="nav-item">|</div>
-                <div className="nav-item">Twinterstagrambook</div>
+                <div className="nav-item">Cards</div>
             </div>
             <div className="nav-center">
             </div>
