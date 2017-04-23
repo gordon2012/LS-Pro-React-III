@@ -1,3 +1,25 @@
+/* Debug */
+.g {
+  background-color: chartreuse !important;
+}
+.m {
+  background-color: magenta;
+}
+.y {
+  background-color: yellow;
+}
+
+.br {
+  border: 4px solid red;
+}
+.bb {
+  border: 4px solid blue;
+}
+.bc {
+  border: 4px solid cyan;
+}
+
+
 /* Flexbox structure */
 .App {
   display: flex;
@@ -86,5 +108,17 @@ svg {
 @media(min-width: 200px) {
   .Card-inner {
     margin: 8px;
+  }
+}
+
+/* Bio */
+@media(max-width: 449px) {
+  .hide-small {
+    display: none;
+  }
+}
+@media(min-width: 450px) {
+  .hide-not-small {
+    display: none;
   }
 }

@@ -6,13 +6,12 @@ import Body from './components/Body';
 import 'bulma/css/bulma.css';
 import './App.css';
 
-
 export default class App extends Component {
   render() {
     return (
       <div className="App">
         <Header />
-        <Body />
+        <Body {...this.props}/>
         <Footer />
       </div>
     );
