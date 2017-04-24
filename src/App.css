@@ -87,7 +87,8 @@ svg {
 
 .Body-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
+  /*justify-content: space-around;*/
 }
 
 .Card {
@@ -121,4 +122,21 @@ svg {
   .hide-not-small {
     display: none;
   }
+}
+
+/* Overlap */
+
+.Card-overlay {
+  position: relative;
+}
+.Card-overlay:after {
+  content: " ";
+  z-index: 10;
+  display: block;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.5);
 }
