@@ -40,6 +40,13 @@ export default class Body extends Component {
         });
     }
 
+    _handleModal() {
+        console.log('handle modal', this);
+
+        
+
+    }
+
     componentDidMount() {
         window.addEventListener('scroll', this._handleScroll);
     }
@@ -50,7 +57,7 @@ export default class Body extends Component {
                 <div className="Body inner">
                     <Bio user={this.props.user} />
                     <div className="Body-container">
-                        { this.state.posts.map((post,i) => <Card key={i} data={post} />) }
+                        { this.state.posts.map((post,i) => <Card key={i} index={i} data={post} handleModal={this.props.handleModal} />) }
                     </div>
                     <div className="columns" style={{margin: '32px 0'}}>
                         <div className="column is-4 is-offset-4">

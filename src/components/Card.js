@@ -19,6 +19,10 @@ export default class Card extends Component {
         });
     }
 
+    componentDidMount() {
+        // console.log(this.props);
+    }
+
     render() {
         const {url, hearts, comments} = this.props.data;
 
@@ -28,6 +32,7 @@ export default class Card extends Component {
                 height: '0',
                 paddingBottom: '33.33%',
                 position: 'relative',
+                cursor: 'pointer'
             },
             inner: {
                 backgroundRepeat: 'no-repeat',
@@ -61,8 +66,10 @@ export default class Card extends Component {
             },
         };
 
+
+
         return (
-            <div style={style.wrap} onMouseEnter={this._handleHover} onMouseLeave={this._handleHover}>
+            <div style={style.wrap} onMouseEnter={this._handleHover} onMouseLeave={this._handleHover} onClick={()=>{ this.props.handleModal(this.props.index); }}>
                 <div style={style.inner}></div>
                 <div style={this.state.hover ? style.overlay : style.hide }>
                     <div style={style.caption} className="columns">
