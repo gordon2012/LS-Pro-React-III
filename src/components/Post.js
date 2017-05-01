@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Row, Col, Button, Modal} from 'react-bootstrap';
+import {Row, Col, Button/*, Modal*/} from 'react-bootstrap';
 import styled from 'styled-components';
 
 export default class extends Component {

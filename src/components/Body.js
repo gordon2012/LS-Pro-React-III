@@ -35,13 +35,14 @@ export default class Body extends Component {
             });
         }
 
+        // console.log(newPosts);
         this.setState({
             posts: this.state.posts.concat(newPosts)
         });
     }
 
     _handleModal() {
-        console.log('handle modal', this);
+        // console.log('handle modal', this);
 
         
 

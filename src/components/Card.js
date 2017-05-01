@@ -13,7 +13,7 @@ export default class Card extends Component {
     }
 
     _handleHover() {
-        console.log('hover');
+        // console.log('hover');
         this.setState({
             hover: !this.state.hover
         });
