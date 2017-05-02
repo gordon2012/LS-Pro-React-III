@@ -13,39 +13,12 @@ export default class Body extends Component {
         };
 
         this._handleScroll = this._handleScroll.bind(this);
-        this._loadPosts = this._loadPosts.bind(this);
     }
 
     _handleScroll() {
         if( this.state.loadMore && document.body.offsetHeight - window.innerHeight - window.scrollY <= 0) {
-            this._loadPosts(6);
+            this.props.loadPosts(6);
         }
-    }
-
-    _loadPosts(num) {
-        const rng = (min,max) => Math.floor(Math.random() * (max - min + 1)) + min;
-
-        let newPosts = [];
-        for(let i = 0; i < num; i++) {
-            newPosts.push({
-                title: 'Good Stuff',
-                url: `http://lorempixel.com/${rng(2,8)}00/${rng(2,8)}00`,
-                hearts: rng(400, 9000),
-                comments: rng(5, 300)
-            });
-        }
-
-        // console.log(newPosts);
-        this.setState({
-            posts: this.state.posts.concat(newPosts)
-        });
-    }
-
-    _handleModal() {
-        // console.log('handle modal', this);
-
-        
-
     }
 
     componentDidMount() {
@@ -58,7 +31,7 @@ export default class Body extends Component {
                 <div className="Body inner">
                     <Bio user={this.props.user} />
                     <div className="Body-container">
-                        { this.state.posts.map((post,i) => <Card key={i} index={i} data={post} handleModal={this.props.handleModal} />) }
+                        { this.props.posts.map((post,i) => <Card key={i} index={i} data={post} handleModal={this.props.handleModal} />) }
                     </div>
                     <div className="columns" style={{margin: '32px 0'}}>
                         <div className="column is-4 is-offset-4">

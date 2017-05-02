@@ -13,14 +13,9 @@ export default class Card extends Component {
     }
 
     _handleHover() {
-        // console.log('hover');
         this.setState({
             hover: !this.state.hover
         });
-    }
-
-    componentDidMount() {
-        // console.log(this.props);
     }
 
     render() {
@@ -66,10 +61,11 @@ export default class Card extends Component {
             },
         };
 
-
-
         return (
-            <div style={style.wrap} onMouseEnter={this._handleHover} onMouseLeave={this._handleHover} onClick={()=>{ this.props.handleModal(this.props.index); }}>
+            <div style={style.wrap} onMouseEnter={this._handleHover} onMouseLeave={this._handleHover} onClick={()=>{
+                console.log(this.props.index)
+                this.props.handleModal(this.props.index);
+            }}>
                 <div style={style.inner}></div>
                 <div style={this.state.hover ? style.overlay : style.hide }>
                     <div style={style.caption} className="columns">

@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-// import {Row, Col, Button, Modal} from 'react-bootstrap';
 import styled from 'styled-components';
 
 export default class extends Component {
@@ -9,18 +8,7 @@ export default class extends Component {
         this.state = {
             show: props.show
         };
-        // console.log(props);
-
     }
-
-    // _open() {
-    //     this.setState({open: true});
-    // }
-
-    componentDidMount() {
-        console.log(this.props);
-    }
-
 
     render() {
         const Overlay = styled.div`

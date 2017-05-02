@@ -3,10 +3,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Body from './components/Body';
 
-// import PostModal from './components/PostModal';
 import Post from './components/Post';
 import MyModal from './components/MyModal';
-// import {Modal} from 'react-bootstrap'
 
 import './App.css';
 
@@ -14,53 +12,47 @@ export default class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {modal: -1};
+    this.state = {
+      modal: -1,
+      posts: props.posts
+    };
     
     this._handleModal = this._handleModal.bind(this);
+    this._loadPosts = this._loadPosts.bind(this);
   }
 
   _handleModal(index) {
-    console.log('App handle modal', index);
-    // this.modal._open()
     this.setState({modal: index});
   }
-  
-  render() {
 
+  _loadPosts(num) {
+    const rng = (min,max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-    /*
-    const props = this.state.modal === -1 ? {
-      modal: {
-        show: false
-      },
-      post: {}
-    } : {
-      modal : {
-        show: true
-      },
-      post: {
-        index: this.state.modal,
-        post: this.props.posts[this.state.modal]
-      }
+    let newPosts = [];
+    for(let i = 0; i < num; i++) {
+        newPosts.push({
+            title: 'Good Stuff',
+            url: `http://lorempixel.com/${rng(2,8)}00/${rng(2,8)}00`,
+            hearts: rng(400, 9000),
+            comments: rng(5, 300)
+        });
     }
-    */
 
-    // const props = {
-    //   index: this.state.modal,
-    //   post: this.props.posts[this.state.modal]
-    // }
+    // console.log(newPosts);
+    this.setState({
+        posts: this.state.posts.concat(newPosts)
+    });
+  }
 
+  render() {
     const modal = this.state.modal;    
-
     return (
       <div className="App">
-        {/*<PostModal {...props} close={ ()=> {this._handleModal(-1); }}/>*/}
-        { this.state.modal > -1 && <MyModal show={modal !== -1}>
-          <Post close={ ()=> {this._handleModal(-1); }} index={modal} post={this.props.posts[modal]}/>
+        { modal > -1 && <MyModal show={modal !== -1}>
+          <Post close={ ()=> {this._handleModal(-1); }} index={modal} post={this.state.posts[modal]}/>
         </MyModal>}
-
         <Header />
-        <Body {...this.props} handleModal={this._handleModal}/>
+        <Body {...this.props} posts={this.state.posts} handleModal={this._handleModal} loadPosts={this._loadPosts}/>
         <Footer />
       </div>
     );
