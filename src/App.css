@@ -63,7 +63,7 @@ svg {
 .get-app, .nav-right .nav-item div:hover .web-app {
   display: block !important;
 }
-.nav-item div .button:hover {
+.nav-item div .btn:hover {
   cursor: not-allowed !important;
 }
 

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import '../App.css';
+import {Button} from 'react-bootstrap';
+import styled from 'styled-components';
 
-export default class Bio extends Component {
+export default class extends Component {
     render() {
         const {name, pic, bio} = this.props.user;
 
@@ -38,6 +39,10 @@ export default class Bio extends Component {
                  padding: '16px 8px'
             }
         };
+
+        const FollowButton = styled(Button)`
+            margin-left: 16px;
+        `;
         
         return (
             <div className="Bio">
@@ -48,7 +53,7 @@ export default class Bio extends Component {
                             {Image}
                         </div>
                         <div style={s.r}>
-                            <p className="title">{name}<button className="button is-info" style={{marginLeft: '16px'}}>Follow</button></p>
+                            <p className="title">{name}<FollowButton bsStyle="primary">Follow</FollowButton></p>
                             <p className="hide-small"><strong>{name}</strong> {bio}</p>
                         </div>
                     </div>

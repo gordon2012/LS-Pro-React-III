@@ -6,8 +6,6 @@ import Body from './components/Body';
 import Post from './components/Post';
 import MyModal from './components/MyModal';
 
-import './App.css';
-
 export default class App extends Component {  
   constructor(props) {
     super(props);
@@ -38,7 +36,6 @@ export default class App extends Component {
         });
     }
 
-    // console.log(newPosts);
     this.setState({
         posts: this.state.posts.concat(newPosts)
     });

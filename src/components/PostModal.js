@@ -13,17 +13,9 @@ export default class extends Component {
         this.setState({open: true});
     }
 
-
     render() {
-
-        // const {title, url} = this.props.post;
-
-
-        const Col1 = styled(Col)`
-            // background: chartreuse;
-        `;
+        const Col1 = styled(Col)``;
         const Col2 = styled(Col)`
-            // background: magenta;
             padding-top: 32px;
         `;
 
@@ -44,8 +36,6 @@ export default class extends Component {
                                 <Button onClick={this.props.close}>Close</Button>
                             </Col2>
                         </Row>
-
-
                     </Modal.Body>
                 </Modal> }
             </div>

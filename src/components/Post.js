@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Row, Col, Button/*, Modal*/} from 'react-bootstrap';
+import {Row, Col, Button} from 'react-bootstrap';
 import styled from 'styled-components';
 
 export default class extends Component {
@@ -15,21 +15,11 @@ export default class extends Component {
 
 
     render() {
-
-        // const {title, url} = this.props.post;
-
-
-        const Col1 = styled(Col)`
-            // background: chartreuse;
-        `;
+        const Col1 = styled(Col)``;
         const Col2 = styled(Col)`
-            // background: magenta;
             padding-top: 32px;
         `;
-
-        const Image = styled.img`
-            // max-height: 50vh;
-        `;
+        const Image = styled.img``;
 
         return (
             <Row>
